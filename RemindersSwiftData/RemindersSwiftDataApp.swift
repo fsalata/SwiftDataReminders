@@ -12,7 +12,10 @@ import SwiftData
 struct RemindersSwiftDataApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            NavigationStack {
+                HomeScreen()
+            }
+            .modelContainer(for: MyList.self)
         }
     }
 }
