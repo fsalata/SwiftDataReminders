@@ -21,6 +21,8 @@
 		E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */; };
 		E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */; };
 		E4B43E412C863A5A00D31FFE /* ReminderEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */; };
+		E4B43E432C8646B500D31FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E422C8646B500D31FFE /* Date+Extensions.swift */; };
+		E4B43E462C86485500D31FFE /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E452C86485500D31FFE /* Delay.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
 		E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditScreen.swift; sourceTree = "<group>"; };
+		E4B43E422C8646B500D31FFE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		E4B43E452C86485500D31FFE /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -123,6 +127,7 @@
 			children = (
 				E4B43E362C82451F00D31FFE /* Color+Extensions.swift */,
 				E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */,
+				E4B43E422C8646B500D31FFE /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				E4B43E252C82442A00D31FFE /* Screens */,
 				E4B43E272C82442A00D31FFE /* Views */,
 				E4B43E202C82442A00D31FFE /* Extensions */,
+				E4B43E442C86484300D31FFE /* Utils */,
 				E4B43E332C82450B00D31FFE /* Preview Content */,
 				E4B43E282C82442A00D31FFE /* Assets.xcassets */,
 			);
@@ -177,6 +183,14 @@
 				E4B43E322C82450B00D31FFE /* PreviewContainer.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E4B43E442C86484300D31FFE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E4B43E452C86485500D31FFE /* Delay.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +339,7 @@
 				E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */,
 				E4B43E352C82450B00D31FFE /* PreviewContainer.swift in Sources */,
 				E4B43E2B2C82442A00D31FFE /* MyList.swift in Sources */,
+				E4B43E432C8646B500D31FFE /* Date+Extensions.swift in Sources */,
 				E4B43E412C863A5A00D31FFE /* ReminderEditScreen.swift in Sources */,
 				E4B43E2C2C82442A00D31FFE /* AddListScreen.swift in Sources */,
 				E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */,
@@ -332,6 +347,7 @@
 				E4B43E2D2C82442A00D31FFE /* HomeScreen.swift in Sources */,
 				E4B43E372C82451F00D31FFE /* Color+Extensions.swift in Sources */,
 				E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */,
+				E4B43E462C86485500D31FFE /* Delay.swift in Sources */,
 				E4B43E2E2C82442A00D31FFE /* MyListView.swift in Sources */,
 				E4B43E2F2C82442A00D31FFE /* RemindersSwiftDataApp.swift in Sources */,
 			);

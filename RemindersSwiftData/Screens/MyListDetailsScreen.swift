@@ -11,10 +11,14 @@ import SwiftData
 struct MyListDetailsScreen: View {
     let myList: MyList
 
+    @Environment(\.modelContext) private var context
+
     @State private var title = ""
     @State private var isNewReminderAlertPresented = false
     @State private var selectedReminder: Reminder?
     @State private var showReminderEditScreen = false
+
+    private let delay = Delay()
 
     private var isFormValid: Bool {
         !title.isEmptyOrWhiteSpace
@@ -22,17 +26,30 @@ struct MyListDetailsScreen: View {
 
     var body: some View {
         VStack {
-            List(myList.reminders) { reminder in
-                ReminderCellView(reminder: reminder, isSelected: isReminderSelected(reminder)) { event in
-                    switch event {
-                    case let .onChecked(reminder, checked):
-                        reminder.isCompleted = checked
-                    case let .onSelect(reminder):
-                        selectedReminder = reminder
-                    case let .onInfoSelected(reminder):
-                        showReminderEditScreen = true
-                        selectedReminder = reminder
+            List {
+                ForEach(myList.reminders.filter { !$0.isCompleted }) { reminder in
+                    ReminderCellView(reminder: reminder, isSelected: isReminderSelected(reminder)) { event in
+                        switch event {
+                        case let .onChecked(reminder, checked):
+                            // cancel previous task
+                            delay.cancel()
+                            
+                            // delay checked call
+                            delay.performWork {
+                                reminder.isCompleted = checked
+                            }
+                            
+                        case let .onSelect(reminder):
+                            selectedReminder = reminder
+                            
+                        case let .onInfoSelected(reminder):
+                            showReminderEditScreen = true
+                            selectedReminder = reminder
+                        }
                     }
+                }
+                .onDelete { indexSet in
+                    deleteReminder(indexSet)
                 }
             }
 
@@ -56,6 +73,7 @@ struct MyListDetailsScreen: View {
             Button("Cancel", role: .cancel, action: {})
             Button("Done") {
                 saveReminder()
+                title = ""
             }
             .disabled(!isFormValid)
         }
@@ -74,8 +92,16 @@ struct MyListDetailsScreen: View {
 
     private func saveReminder() {
         let reminder = Reminder(title: title)
+
         myList.reminders.append(reminder)
-        title = ""
+    }
+
+    private func deleteReminder(_ indexSet: IndexSet) {
+        guard let index = indexSet.last else { return }
+
+        let reminder = myList.reminders[index]
+
+        context.delete(reminder)
     }
 }
 

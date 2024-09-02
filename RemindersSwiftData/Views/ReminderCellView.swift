@@ -28,7 +28,7 @@ struct ReminderCellView: View {
                 .padding([.trailing], 5)
                 .onTapGesture {
                     checked.toggle()
-
+                    
                     onEvent(.onChecked(reminder, checked))
                 }
 
@@ -45,7 +45,7 @@ struct ReminderCellView: View {
 
                 HStack {
                     if let date = reminder.date {
-                        Text(date, style: .date)
+                        Text(formatReminderDate(date))
                     }
 
                     if let time = reminder.time {
@@ -68,6 +68,17 @@ struct ReminderCellView: View {
         .onTapGesture {
             onEvent(.onSelect(reminder))
         }
+    }
+
+    // TODO: create date formatter for Text
+    private func formatReminderDate(_ date: Date) -> String {
+        if date.isToday {
+            return "Today"
+        } else if date.isTomorrow {
+            return "Tomorrow"
+        }
+
+        return date.formatted(date: .abbreviated, time: .omitted)
     }
 }
 
