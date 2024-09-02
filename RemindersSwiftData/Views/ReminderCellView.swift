@@ -23,7 +23,7 @@ struct ReminderCellView: View {
 
     var body: some View {
         HStack(alignment: .center) {
-            Image(systemName: "circle")
+            Image(systemName:  checked ? "circle.inset.filled" : "circle")
                 .font(.title2)
                 .padding([.trailing], 5)
                 .onTapGesture {

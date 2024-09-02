@@ -20,6 +20,7 @@
 		E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */; };
 		E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */; };
 		E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */; };
+		E4B43E412C863A5A00D31FFE /* ReminderEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailsScreen.swift; sourceTree = "<group>"; };
 		E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
+		E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -140,6 +142,7 @@
 				E4B43E232C82442A00D31FFE /* AddListScreen.swift */,
 				E4B43E242C82442A00D31FFE /* HomeScreen.swift */,
 				E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */,
+				E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */,
 				E4B43E352C82450B00D31FFE /* PreviewContainer.swift in Sources */,
 				E4B43E2B2C82442A00D31FFE /* MyList.swift in Sources */,
+				E4B43E412C863A5A00D31FFE /* ReminderEditScreen.swift in Sources */,
 				E4B43E2C2C82442A00D31FFE /* AddListScreen.swift in Sources */,
 				E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */,
 				E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */,

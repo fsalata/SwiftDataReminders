@@ -13,6 +13,8 @@ struct MyListDetailsScreen: View {
 
     @State private var title = ""
     @State private var isNewReminderAlertPresented = false
+    @State private var selectedReminder: Reminder?
+    @State private var showReminderEditScreen = false
 
     private var isFormValid: Bool {
         !title.isEmptyOrWhiteSpace
@@ -21,14 +23,15 @@ struct MyListDetailsScreen: View {
     var body: some View {
         VStack {
             List(myList.reminders) { reminder in
-                ReminderCellView(reminder: reminder, isSelected: false) { event in
+                ReminderCellView(reminder: reminder, isSelected: isReminderSelected(reminder)) { event in
                     switch event {
                     case let .onChecked(reminder, checked):
-                        print("onChecked")
+                        reminder.isCompleted = checked
                     case let .onSelect(reminder):
-                        print("onSelect")
+                        selectedReminder = reminder
                     case let .onInfoSelected(reminder):
-                        print("onInfoSelected")
+                        showReminderEditScreen = true
+                        selectedReminder = reminder
                     }
                 }
             }
@@ -56,6 +59,17 @@ struct MyListDetailsScreen: View {
             }
             .disabled(!isFormValid)
         }
+        .sheet(isPresented: $showReminderEditScreen) {
+            if let selectedReminder {
+                NavigationStack {
+                    ReminderEditScreen(reminder: selectedReminder)
+                }
+            }
+        }
+    }
+
+    private func isReminderSelected(_ reminder: Reminder) -> Bool {
+        reminder.persistentModelID == selectedReminder?.persistentModelID
     }
 
     private func saveReminder() {
