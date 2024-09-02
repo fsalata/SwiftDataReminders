@@ -22,11 +22,15 @@ struct HomeScreen: View {
 
             ForEach(myLists, id: \.self) { list in
                 HStack {
-                    Image(systemName: "line.3.horizontal.circle.fill")
-                        .font(.system(size: 32))
-                        .foregroundStyle(Color(hex: list.color) ?? .black)
+                    NavigationLink {
+                        MyListDetailsScreen(myList: list)
+                    } label: {
+                        Image(systemName: "line.3.horizontal.circle.fill")
+                            .font(.system(size: 32))
+                            .foregroundStyle(Color(hex: list.color) ?? .black)
 
-                    Text(list.name)
+                        Text(list.name)
+                    }
                 }
             }
 

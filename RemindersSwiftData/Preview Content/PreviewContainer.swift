@@ -14,6 +14,10 @@ var previewContainer: ModelContainer = {
     let previewContainer = try!  ModelContainer(for: MyList.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
 
     for list in SampleData.myList {
+        if list.name == "Groceries" {
+            list.reminders = SampleData.reminders
+        }
+
         previewContainer.mainContext.insert(list)
     }
 
@@ -23,5 +27,9 @@ var previewContainer: ModelContainer = {
 struct SampleData {
     static var myList: [MyList] = {
         [MyList(name: "Groceries", color: Color.green.toHex()), MyList(name: "Business", color: Color.red.toHex())]
+    }()
+
+    static var reminders: [Reminder] = {
+        [Reminder(title: "Beer"), Reminder(title: "Food")]
     }()
 }

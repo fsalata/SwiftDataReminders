@@ -16,6 +16,9 @@
 		E4B43E342C82450B00D31FFE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4B43E312C82450B00D31FFE /* Preview Assets.xcassets */; };
 		E4B43E352C82450B00D31FFE /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E322C82450B00D31FFE /* PreviewContainer.swift */; };
 		E4B43E372C82451F00D31FFE /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E362C82451F00D31FFE /* Color+Extensions.swift */; };
+		E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E382C8628B200D31FFE /* Reminder.swift */; };
+		E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */; };
+		E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +51,9 @@
 		E4B43E312C82450B00D31FFE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E4B43E322C82450B00D31FFE /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		E4B43E362C82451F00D31FFE /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		E4B43E382C8628B200D31FFE /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
+		E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailsScreen.swift; sourceTree = "<group>"; };
+		E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -112,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B43E362C82451F00D31FFE /* Color+Extensions.swift */,
+				E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -120,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B43E212C82442A00D31FFE /* MyList.swift */,
+				E4B43E382C8628B200D31FFE /* Reminder.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			children = (
 				E4B43E232C82442A00D31FFE /* AddListScreen.swift */,
 				E4B43E242C82442A00D31FFE /* HomeScreen.swift */,
+				E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -307,11 +316,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */,
 				E4B43E352C82450B00D31FFE /* PreviewContainer.swift in Sources */,
 				E4B43E2B2C82442A00D31FFE /* MyList.swift in Sources */,
 				E4B43E2C2C82442A00D31FFE /* AddListScreen.swift in Sources */,
+				E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */,
 				E4B43E2D2C82442A00D31FFE /* HomeScreen.swift in Sources */,
 				E4B43E372C82451F00D31FFE /* Color+Extensions.swift in Sources */,
+				E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */,
 				E4B43E2E2C82442A00D31FFE /* MyListView.swift in Sources */,
 				E4B43E2F2C82442A00D31FFE /* RemindersSwiftDataApp.swift in Sources */,
 			);
