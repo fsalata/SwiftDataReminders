@@ -19,6 +19,7 @@
 		E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E382C8628B200D31FFE /* Reminder.swift */; };
 		E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */; };
 		E4B43E3D2C862EED00D31FFE /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */; };
+		E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		E4B43E382C8628B200D31FFE /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		E4B43E3A2C862A8A00D31FFE /* MyListDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListDetailsScreen.swift; sourceTree = "<group>"; };
 		E4B43E3C2C862EED00D31FFE /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E4B43E262C82442A00D31FFE /* MyListView.swift */,
+				E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -321,6 +324,7 @@
 				E4B43E2B2C82442A00D31FFE /* MyList.swift in Sources */,
 				E4B43E2C2C82442A00D31FFE /* AddListScreen.swift in Sources */,
 				E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */,
+				E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */,
 				E4B43E2D2C82442A00D31FFE /* HomeScreen.swift in Sources */,
 				E4B43E372C82451F00D31FFE /* Color+Extensions.swift in Sources */,
 				E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */,

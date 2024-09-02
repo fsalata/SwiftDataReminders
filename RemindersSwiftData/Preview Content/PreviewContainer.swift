@@ -26,10 +26,10 @@ var previewContainer: ModelContainer = {
 
 struct SampleData {
     static var myList: [MyList] = {
-        [MyList(name: "Groceries", color: Color.green.toHex()), MyList(name: "Business", color: Color.red.toHex())]
+        [MyList(name: "Groceries", color: Color.green.toHex())]
     }()
 
     static var reminders: [Reminder] = {
-        [Reminder(title: "Beer"), Reminder(title: "Food")]
+        [Reminder(title: "Beer", notes: "Corona", date: Date(), time: Date()), Reminder(title: "Food", notes: "Steak", date: Date(), time: Date())]
     }()
 }
