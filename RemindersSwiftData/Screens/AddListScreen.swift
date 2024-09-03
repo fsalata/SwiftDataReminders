@@ -14,6 +14,12 @@ struct AddListScreen: View {
     @State private var name = ""
     @State private var color: Color = .blue
 
+    var list: MyList? = nil
+
+    private var isFormValid: Bool {
+        !name.isEmptyOrWhiteSpace
+    }
+
     var body: some View {
         VStack {
             Image(systemName: "line.3.horizontal.circle.fill")
@@ -32,6 +38,12 @@ struct AddListScreen: View {
                     .padding([.trailing], 44)
             }
         }
+        .onAppear {
+            if let list {
+                name = list.name
+                color = Color(hex: list.color) ?? .blue
+            }
+        }
         .navigationTitle("New list")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -45,11 +57,19 @@ struct AddListScreen: View {
 
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
-                    context.insert(MyList(name: name, color: color.toHex()))
+                    if let list {
+                        list.name = name
+                        list.color = color.toHex()
+                    } else {
+                        context.insert(MyList(name: name, color: color.toHex()))
+                    }
+
                     dismiss()
+                    
                 } label: {
                     Text("Done")
                 }
+                .disabled(!isFormValid)
             }
         }
     }

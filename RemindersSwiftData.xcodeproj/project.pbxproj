@@ -23,6 +23,7 @@
 		E4B43E412C863A5A00D31FFE /* ReminderEditScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */; };
 		E4B43E432C8646B500D31FFE /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E422C8646B500D31FFE /* Date+Extensions.swift */; };
 		E4B43E462C86485500D31FFE /* Delay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E452C86485500D31FFE /* Delay.swift */; };
+		E4B43E482C87923F00D31FFE /* MyListCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4B43E472C87923F00D31FFE /* MyListCellView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		E4B43E402C863A5A00D31FFE /* ReminderEditScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderEditScreen.swift; sourceTree = "<group>"; };
 		E4B43E422C8646B500D31FFE /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		E4B43E452C86485500D31FFE /* Delay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delay.swift; sourceTree = "<group>"; };
+		E4B43E472C87923F00D31FFE /* MyListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListCellView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -155,6 +157,7 @@
 		E4B43E272C82442A00D31FFE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E4B43E472C87923F00D31FFE /* MyListCellView.swift */,
 				E4B43E262C82442A00D31FFE /* MyListView.swift */,
 				E4B43E3E2C86314500D31FFE /* ReminderCellView.swift */,
 			);
@@ -345,6 +348,7 @@
 				E4B43E392C8628B200D31FFE /* Reminder.swift in Sources */,
 				E4B43E3F2C86314500D31FFE /* ReminderCellView.swift in Sources */,
 				E4B43E2D2C82442A00D31FFE /* HomeScreen.swift in Sources */,
+				E4B43E482C87923F00D31FFE /* MyListCellView.swift in Sources */,
 				E4B43E372C82451F00D31FFE /* Color+Extensions.swift in Sources */,
 				E4B43E3B2C862A8A00D31FFE /* MyListDetailsScreen.swift in Sources */,
 				E4B43E462C86485500D31FFE /* Delay.swift in Sources */,

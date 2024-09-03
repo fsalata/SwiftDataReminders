@@ -13,6 +13,8 @@ struct HomeScreen: View {
     @Query private var myLists: [MyList]
 
     @State private var isPresenting = false
+    @State private var selectedList: MyList?
+    @State private var sheetAction: HomeScreenSheetAction?
 
     var body: some View {
         List {
@@ -22,20 +24,21 @@ struct HomeScreen: View {
 
             ForEach(myLists, id: \.self) { list in
                 HStack {
-                    NavigationLink {
-                        MyListDetailsScreen(myList: list)
-                    } label: {
-                        Image(systemName: "line.3.horizontal.circle.fill")
-                            .font(.system(size: 32))
-                            .foregroundStyle(Color(hex: list.color) ?? .black)
-
-                        Text(list.name)
+                    NavigationLink(value: list) {
+                        MyListCellView(list: list)
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                selectedList = list
+                            }
+                            .onLongPressGesture {
+                                sheetAction = .edit(list: list)
+                            }
                     }
                 }
             }
 
             Button {
-                isPresenting = true
+                sheetAction = .new
             } label: {
                 Text("Add list")
             }
@@ -44,9 +47,37 @@ struct HomeScreen: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
-        .sheet(isPresented: $isPresenting) {
-            NavigationStack {
-                AddListScreen()
+        .navigationDestination(item: $selectedList, destination: { list in
+            MyListDetailsScreen(myList: list)
+        })
+        .sheet(item: $sheetAction) { action in
+            switch action {
+            case .new:
+                NavigationStack {
+                    AddListScreen()
+                }
+
+            case .edit(let list):
+                NavigationStack {
+                    AddListScreen(list: list)
+                }
+            }
+        }
+    }
+}
+
+// MARK: Navigation sheet actions
+extension HomeScreen {
+    enum HomeScreenSheetAction: Identifiable {
+        case new
+        case edit(list: MyList)
+
+        var id: Int {
+            switch self {
+            case .new:
+                return 0
+            case .edit(let list):
+                return list.hashValue
             }
         }
     }
@@ -58,3 +89,5 @@ struct HomeScreen: View {
     }
     .modelContainer(previewContainer)
 }
+
+
