@@ -17,4 +17,8 @@ extension Date {
         let calendar = Calendar.current
         return calendar.isDateInTomorrow(self)
     }
+
+    var dateComponets: DateComponents {
+        Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: self)
+    }
 }

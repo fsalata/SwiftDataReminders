@@ -6,10 +6,15 @@
 //
 
 import SwiftUI
-import SwiftData
+import UserNotifications
 
 @main
 struct RemindersSwiftDataApp: App {
+
+    init() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { _, _ in }
+    }
+
     var body: some Scene {
         WindowGroup {
             NavigationStack {

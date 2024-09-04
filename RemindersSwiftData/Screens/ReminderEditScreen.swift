@@ -102,6 +102,8 @@ struct ReminderEditScreen: View {
         reminder.notes = notes.isEmpty ? nil : notes
         reminder.date = showCalendar ? date : nil
         reminder.time = showTime ? time : nil
+
+        NotificationManager.scheduleNotification(userData: UserData(title: title, body: reminder.notes, date: reminder.date, time: reminder.time))
     }
 }
 
