@@ -9,15 +9,16 @@ import SwiftUI
 import SwiftData
 
 struct HomeScreen: View {
+    @Environment(\.modelContext) private var context
 
     @Query private var myLists: [MyList]
+    @Query private var reminders: [Reminder]
 
     @State private var isPresenting = false
     @State private var selectedList: MyList?
     @State private var sheetAction: HomeScreenSheetAction?
     @State private var selectedReminderStat: ReminderStatsType?
-
-    @Query private var reminders: [Reminder]
+    @State private var search = ""
 
     private let statGridColumns = [
         GridItem(),
@@ -48,6 +49,10 @@ struct HomeScreen: View {
         reminders.filter { $0.isCompleted }
     }
 
+    private var searchResults: [Reminder] {
+        incompleteReminders.filter { $0.title.lowercased().contains(search.lowercased()) }
+    }
+
     var body: some View {
         List {
             LazyVGrid(columns: statGridColumns, spacing: 8) {
@@ -74,6 +79,9 @@ struct HomeScreen: View {
                     }
                 }
             }
+            .onDelete { indexSet in
+                deleteList(indexSet: indexSet)
+            }
 
             Button {
                 sheetAction = .new
@@ -85,6 +93,13 @@ struct HomeScreen: View {
             .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
+        .searchable(text: $search)
+        .overlay(alignment: .center, content: {
+            if !search.isEmpty {
+                ReminderListView(reminders: searchResults)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+        })
         .navigationDestination(item: $selectedList, destination: { list in
             MyListDetailsScreen(myList: list)
         })
@@ -123,6 +138,14 @@ struct HomeScreen: View {
         case .completed:
             completeReminders
         }
+    }
+
+    private func deleteList(indexSet: IndexSet) {
+        guard let index = indexSet.first else { return }
+
+        let mylist = myLists[index]
+
+        context.delete(mylist)
     }
 }
 
